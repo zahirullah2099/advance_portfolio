@@ -1,0 +1,16 @@
+ .intro-text .btn {
+    background-color: #FFD700; /* Dark yellow background */
+    color: black;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: lighter;
+    transition: background-color 0.3s ease;
+  }
+  
+  .intro-text .btn:hover {
+    background-color: #FFC107; /* Lighter yellow on hover */
+  } 
