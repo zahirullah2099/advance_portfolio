@@ -20,13 +20,10 @@
   font-size: 32px;
   font-weight: bold; 
   color: var(--primary-color);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
-
-/* #about .about-details h3 {
-}
-.section_title h3 {
-} */
+ 
 body {
   font-family: Arial, sans-serif;
   background-color: var(--body-bg); /* Dark background color */
@@ -42,7 +39,21 @@ body {
 .section-padding{
   margin-top: 0px;
 }
+
+.section_title {
+  color: var(--primary-color); 
+  border-bottom: 1px solid var(--primary-color);
+  display: inline;
+  margin-bottom: 30px;
+} 
 /* logo styling start */ 
+nav{
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: #222;
+  z-index: 1;
+}
+
 .navbar .logo {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
@@ -88,7 +99,18 @@ body {
 #navbarNav .nav-item .nav-link.active::before {
   width: 100%;
 }
-
+@media (max-width: 992px) {
+  nav {
+    border: none;
+  }
+  nav button {
+    border: none; 
+  }  
+  #navbarNav .nav-item .nav-link::before {
+    display: none; /* disable underline */
+  }
+ 
+}
 /* navbar end */
 
 .section-padding {
@@ -197,12 +219,31 @@ button:hover {
   /* backdrop-filter: brightness(50%); */
 }
 
+@media (max-width: 837px) {
+  .intro-text h1 { 
+  font-size: 55px;
+  line-height: 45px;
+}
+}
+@media (max-width: 767.98px) {
+  .intro-text h1 { 
+  font-size: 45px;
+  line-height: 38px;
+}
+}
+@media (max-width: 676px) {
+  .intro-text h1 { 
+  font-size: 35px;
+  line-height: 30px;
+}
+}
+
 /* hero section end */
 
+
 /* about section start */
-/* about section start */
-.about-image img {
-  max-width: 100%;
+#about .about-image img {
+  /* max-width: 100%; */
   height: 300px;
   width: 300px;
   border-radius: 50%;
@@ -231,21 +272,37 @@ button:hover {
   font-weight: bold;
 }
 
-.section_title {
-  color: var(--primary-color); 
-  border-bottom: 1px solid var(--primary-color);
-  display: inline;
-  margin-bottom: 30px;
-}
 
 /* ✅ Responsive Fixes for Mobile */
-@media (max-width: 767.98px) {
-  #about .about-image img {
-    width: 220px;
-    height: 220px;
-    margin-top: 30px;
+@media (width < 950px) {
+  #about .about{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
+  } 
+  #about .about-image {
+    text-align: center; /* center inside container */
+    margin-bottom: 20px; /* add space below */
+  }
+  /* #about .about-image img {
+    margin: auto;
+  } */
+   #about .about .col-md-6 {
+    flex: 0 0 100%;   /* force full width */
+    width: 150%; 
+  }
+   #about .about-details h2 {
+    font-size: 22px;
+    text-align: start;
   }
 
+  #about .about-details h3 {
+    font-size: 18px;
+    text-align: start;
+  }
+  }
+@media (width < 768px) { 
   #about .about-details {
     text-align: center; /* Center text on small screens */
     padding-top: 15px;
@@ -264,7 +321,7 @@ button:hover {
   #about .about-details p {
     font-size: 14px;
     text-align: start;
-    width: 100%;
+    width: 120%;
   }
 
    button {
@@ -273,6 +330,17 @@ button:hover {
     padding: 0px;  
   }
 }
+@media (width < 535px) {
+    #about .about-image img {
+    height: 250px;
+     width: 250px;
+  }
+  #about .about-details p {
+    font-size: 14px;
+    text-align: start;
+    width: 120%;
+  }
+  }
 
 /* about section send */
 
@@ -328,6 +396,12 @@ button:hover {
   color: var(--primary-color);
 } 
 
+@media (max-width: 576px) {
+  #services .service{ 
+   margin: 20px 30px;
+ }
+  } 
+
 /* service section end */
 
 /* skill section strat */
@@ -340,8 +414,8 @@ button:hover {
   background-color: #333;
   color: white;
   border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 0;
+  margin: 10px 10px;
+  padding: 10px 0;
   text-align: center;
   transition: all ease 0.5s;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -448,7 +522,7 @@ button:hover {
   height: 40px;
 }
 #skills .skill-box .skill-title h2{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
 } 
 #skills .skill-score {
@@ -474,55 +548,25 @@ button:hover {
     transform: translateY(-5px);
   } /* Move up slightly at midpoint */
 }
-/* #skills .skill-box:hover .skill-score {
-  margin: 0 auto;
-  background-color: orangered;
-} */
+
+@media (max-width: 767px) {
+#skills .skill-title h2{
+  font-size: 15px !important;
+}
+}
+ 
 
 /* skill section end */
 
 
-/* resume section start */
-
-.subtitle{
-  color: white;
-}
-/* .yellowHeading{
-  color: var(--primary-color);
-} */
-.experience,.education{
-  display: flex;
-  align-items: center; 
-}
-.Education,.Experience{
-  border-left: 1px solid rgb(113, 108, 108); 
-  padding-left: 20px;
-}
-.Education h6,.Experience h6{
-  color: rgb(181, 177, 177);
-   margin-bottom: 10px;
-}
-.Education h3,.Experience h3{
-  font-size: 25px;
-}
-.experience i,.education i{
-   font-size: 30px;
-   margin-right: 20px;
-}
-.Experience .experience_details p{
-  color: rgb(181, 177, 177);
-}
-
-/* resume section end */
-
 /* portfolio section start */
  .portfolio-card {
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease; 
   border-radius: 15px;
   overflow: hidden; 
   box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.15);
-  border: 2px solid transparent;
-  transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out;
+   cursor: pointer;
 }
 
 .portfolio-card:hover {
@@ -595,11 +639,11 @@ button:hover {
   outline: none;
 } 
 /* Fix Email & Address Icons (Fully Circular) */
-#contact .contact-me i {
-  color: white;
+#contact i {
+  color: white; 
   font-size: 25px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -621,40 +665,17 @@ button:hover {
   display: flex;
   gap: 15px;
   padding: 0;
-  list-style: none;
-}
-
-/* Social Icons Styling */
-#contact .social-links ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: #333;
-  border-radius: 50%;
-  transition: 0.3s ease-in-out;
-  border: 2px solid transparent;
-}
-
+  list-style: none; 
+} 
+#contact .social-links ul a{ 
+  text-decoration: none;
+} 
 /* Social Icons Hover Effect */
-#contact .social-links ul li a:hover {
+#contact i:hover {
   border: 2px solid var(--primary-color);
   box-shadow: 0 0 15px var(--primary-color);
   transform: scale(1.1);
-}
-
-/* Social Icons Font Styling */
-#contact .social-links ul li a i {
-  color: white;
-  font-size: 22px;
-  transition: 0.3s;
-}
-
-/* Social Icons Font Hover Effect */
-#contact .social-links ul li a:hover i {
-  color: var(--primary-color);
-}
+} 
 
 
 /* contact us section end */
@@ -714,5 +735,3 @@ footer p span:hover {
   text-decoration: underline;
   letter-spacing: 1px;
 }
-
-/* footer end */
